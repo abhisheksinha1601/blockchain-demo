@@ -1,0 +1,16 @@
+<div class="modal-dialog">
+  <div class="modal-content container">
+    <div class="modal-header">
+      <h4 class="modal-title">Add transaction</h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    <div class="modal-body row">
+      <textarea #data class="col-lg-12" style="height: 100px;"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal"
+        (click)="addTransaction(data.value)">Save</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>

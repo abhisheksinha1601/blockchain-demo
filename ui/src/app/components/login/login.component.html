@@ -1,0 +1,12 @@
+<div class="container" style="margin-top:30vh;">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 text-center form-group">
+      <input type="text" placeholder="Username" class="form-control mb-3" [(ngModel)]="username" />
+      <input type="password" placeholder="Password" class="form-control mb-3" [(ngModel)]="password" />
+      <button class="btn btn-default mb-3" (click)="login()">Login</button>
+      <a routerLink='/signup'>Create an Account</a>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>

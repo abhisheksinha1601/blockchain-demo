@@ -1,0 +1,27 @@
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="position: fixed;right: 5vw; bottom:9vh">
+  Add transaction
+</button>
+<div class="modal fade" id="myModal">
+  <app-add-transaction></app-add-transaction>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <table class="table col-lg-12">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Timestamp</th>
+          <th scope="col">Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of (transactions$ | async)?.result; let i=index;">
+          <th scope="row">{{i+1}}</th>
+          <td>{{transaction.timestamp | date:'dd-MM-yyyy HH:mm:ss'}}</td>
+          <td>{{transaction.data?.data}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
