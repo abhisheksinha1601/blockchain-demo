@@ -34,6 +34,11 @@ export class BlockChain {
     async addBlock(userId: string, timestamp: Date, data: any): Promise<boolean> {
         let prevBlock = await this.getLatestBlock();
         if (!prevBlock) {
+            await this.createGenesisBlock();
+            prevBlock = await this.getLatestBlock();
+            if (!prevBlock) {
+                return false;
+            }
             return false;
         }
         let newBlock = new Block(userId, timestamp, data, prevBlock.hash);
